@@ -27,6 +27,9 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input("Please input month name: ").lower()
+    
+    while month not in ['january', 'february', 'march','april','may','june']:
+        month = input("Please input month name: ").lower()
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("Please input day of week: ").lower()
@@ -152,7 +155,7 @@ def user_stats(df, city):
         print("The most common birth year is: {}".format(str(int(df['Birth Year'].mode().values[0]))))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*50)
 
 
 def display_data(df):
